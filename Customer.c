@@ -185,7 +185,7 @@ void freeCustomerTable(Customer *table[]) {
 }
 int main(void) {
     // const char *csvFile = "customers.csv";
-    const char *csvFile = "E:\\CSEM2\\Final_project\\customers.csv";//CSV file location
+    const char *csvFile = "E:\\CSEM2\\Final_project\\FinalProject\\customers.csv";//CSV file location
  
     printf("=== Customer Registry ===\n\n");
  
