@@ -1,0 +1,6 @@
+orderID,customerID,productID,quantity,shippingType,status
+9001,5001,101,2,Express,Pending
+9002,5004,205,1,Standard,Pending
+9003,5002,150,3,Express,Pending
+9004,5006,101,1,Standard,Pending
+9005,5001,206,5,Standard,Pending
