@@ -1,1 +1,17 @@
 actionType,refID,description
+DELETE_PRODUCT,1005,Deleted Nissan Skyline GT-R R34
+DELETE_PRODUCT,1006,Deleted Nitrogen Bomb
+DELETE_PRODUCT,1009,Deleted Larp
+UNDO_DELETE,1010,Restored deleted product ASUS ROG Maximus Z790
+DELETE_PRODUCT,1012,Deleted Oxygen
+UNDO_DELETE,1015,Restored deleted product Logitech G Pro X Superlight
+DELETE_PRODUCT,1018,Deleted Final Exam
+DELETE_PRODUCT,1020,Deleted Programming
+DELETE_PRODUCT,1021,Deleted Sample
+DELETE_PRODUCT,1024,Deleted Samsung
+UPDATE_STOCK,1001,Stock changed from 15 to 4
+UNDO_STOCK,1001,Stock restored from 4 to 15
+UPDATE_STOCK,1005,Stock changed from 18 to 20
+UNDO_STOCK,1005,Stock restored from 20 to 18
+DELETE_PRODUCT,1041,Deleted Testing
+UPDATE_STOCK,1040,Stock changed from 11 to 20

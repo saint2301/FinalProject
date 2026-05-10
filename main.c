@@ -1,12 +1,11 @@
-#include <stdio.h>
 #include "Integration.h"
 
-int main(void) {
+int main() {
     IntegrationSystem system;
-
-    initIntegrationSystem(&system);
-
+    initializeSystem(&system);
+    loadSystemData(&system);
     runIntegrationMenu(&system);
-
+    saveSystemData(&system);
+    freeSystem(&system);
     return 0;
 }

@@ -1,4 +1,4 @@
-//Name: Nanthapat Nanthapat
+//Name: Nanthapat Nanthapaiboon
 //Student ID: 68070503432
 /*
     Order Processing Module
@@ -180,4 +180,13 @@ void freeOrderQueue(Order **front, Order **rear) {
     
     *front = NULL;
     *rear = NULL;
+}
+
+int validateOrder(Customer **customerTable, Product *inventoryRoot, int cid, int pid, int qty) {
+    if (searchCustomer(customerTable, cid) == NULL) return -1;
+    Product *p = searchProduct(inventoryRoot, pid);
+    if (p == NULL) return -2;
+    if (qty <= 0) return -3;
+    if (qty > p->stock) return -4;
+    return 0;
 }

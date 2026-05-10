@@ -1,4 +1,4 @@
-//Name: Nanthapat Nanthapat
+//Name: Nanthapat Nanthapaiboon
 //Student ID: 68070503432
 
 #ifndef ORDERS_H
@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Customer.h"
+#include "Inventory.h"
 
 // Define the Order structure as required
 typedef struct Order {
@@ -24,6 +26,7 @@ Order* createOrder(int orderID, int customerID, int productID, int quantity, con
 void enqueueOrder(Order **front, Order **rear, Order *newOrder);
 Order* dequeueOrder(Order **front, Order **rear);
 void displayPendingOrders(Order *front);
+int validateOrder(Customer **customerTable, Product *inventoryRoot, int cid, int pid, int qty);
 
 // File I/O Functions
 void loadOrdersFromCSV(Order **front, Order **rear, const char *filename);

@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="main_window">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Inventory Management System</property>
+    <property name="default-width">900</property>
+    <property name="default-height">600</property>
+    <signal name="destroy" handler="on_main_window_destroy" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkNotebook" id="main_notebook">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkScrolledWindow">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-start">6</property>
+                    <property name="margin-end">6</property>
+                    <property name="margin-top">6</property>
+                    <property name="margin-bottom">6</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="shadow-type">in</property>
+                    <child>
+                      <object class="GtkTreeView" id="inventory_tree_view">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <child internal-child="selection">
+                          <object class="GtkTreeSelection"/>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkButton" id="btn_add_product">
+                        <property name="label" translatable="yes">Add Product</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Add a new product to inventory</property>
+                        <property name="margin-start">6</property>
+                        <property name="margin-end">2</property>
+                        <signal name="clicked" handler="on_btn_add_product_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_delete_product">
+                        <property name="label" translatable="yes">Delete Product</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Delete a product by ID</property>
+                        <property name="margin-end">2</property>
+                        <signal name="clicked" handler="on_btn_delete_product_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_update_stock">
+                        <property name="label" translatable="yes">Update Stock</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Update stock quantity for a product</property>
+                        <property name="margin-end">2</property>
+                        <signal name="clicked" handler="on_btn_update_stock_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_search_product">
+                        <property name="label" translatable="yes">Search</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Search for a product by ID</property>
+                        <property name="margin-end">6</property>
+                        <signal name="clicked" handler="on_btn_search_product_clicked" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Inventory</property>
+              </object>
+              <packing>
+                <property name="tab-fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkScrolledWindow">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-start">6</property>
+                    <property name="margin-end">6</property>
+                    <property name="margin-top">6</property>
+                    <property name="margin-bottom">6</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="shadow-type">in</property>
+                    <child>
+                      <object class="GtkTreeView" id="customer_tree_view">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <child internal-child="selection">
+                          <object class="GtkTreeSelection"/>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkButton" id="btn_add_customer">
+                        <property name="label" translatable="yes">Add Customer</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Add a new customer</property>
+                        <property name="margin-start">6</property>
+                        <property name="margin-end">2</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_delete_customer">
+                        <property name="label" translatable="yes">Delete Customer</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Delete a customer by ID</property>
+                        <property name="margin-end">2</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_search_customer">
+                        <property name="label" translatable="yes">Search</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Search for a customer by ID</property>
+                        <property name="margin-end">6</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Customers</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+                <property name="tab-fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkScrolledWindow">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-start">6</property>
+                    <property name="margin-end">6</property>
+                    <property name="margin-top">6</property>
+                    <property name="margin-bottom">6</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="shadow-type">in</property>
+                    <child>
+                      <object class="GtkTreeView" id="orders_tree_view">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <child internal-child="selection">
+                          <object class="GtkTreeSelection"/>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkButton" id="btn_place_order">
+                        <property name="label" translatable="yes">Place Order</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Place a new order</property>
+                        <property name="margin-start">6</property>
+                        <property name="margin-end">2</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_process_order">
+                        <property name="label" translatable="yes">Process Order</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Process the next pending order</property>
+                        <property name="margin-end">6</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Orders</property>
+              </object>
+              <packing>
+                <property name="position">2</property>
+                <property name="tab-fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkScrolledWindow">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="margin-start">6</property>
+                    <property name="margin-end">6</property>
+                    <property name="margin-top">6</property>
+                    <property name="margin-bottom">6</property>
+                    <property name="hscrollbar-policy">never</property>
+                    <property name="shadow-type">in</property>
+                    <child>
+                      <object class="GtkTreeView" id="admin_tree_view">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <child internal-child="selection">
+                          <object class="GtkTreeSelection"/>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkButton" id="btn_undo">
+                        <property name="label" translatable="yes">Undo Last Action</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Undo the last admin action</property>
+                        <property name="margin-start">6</property>
+                        <property name="margin-end">2</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_view_log">
+                        <property name="label" translatable="yes">View Log</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="tooltip-text" translatable="yes">Refresh and view the admin action log</property>
+                        <property name="margin-end">6</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Admin</property>
+              </object>
+              <packing>
+                <property name="position">3</property>
+                <property name="tab-fill">False</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
