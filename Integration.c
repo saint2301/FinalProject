@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "Integration.h"
+#include <Integration.h>
 
 static void clearInputBuffer(void) {
     int ch;
