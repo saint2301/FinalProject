@@ -6,7 +6,7 @@
 
 Customer *customerTable[TABLE_SIZE];
 
-int hashfunction(int customerID)
+int hashFunction(int customerID)
 {
     return customerID % TABLE_SIZE;
 }
@@ -33,7 +33,7 @@ void insertCustomer(Customer *table[],Customer * newCustomer)
     {
         return;
     }
-    int index = hashfunction(newCustomer -> CustomerID);
+    int index = hashFunction(newCustomer -> CustomerID);
 
 
     Customer *current = table[index];
@@ -50,7 +50,7 @@ void insertCustomer(Customer *table[],Customer * newCustomer)
 
 Customer* searchCustomer(Customer * table[],int CustomerID)
 {
-    int index = hashfunction(CustomerID);
+    int index = hashFunction(CustomerID);
     Customer *current = table[index];
 
     while(current)
@@ -183,7 +183,7 @@ void freeCustomerTable(Customer *table[]) {
         table[i] = NULL;
     }
 }
-int main(void) {
+int test_customer_main(void) {
     // const char *csvFile = "customers.csv";
     const char *csvFile = "E:\\CSEM2\\Final_project\\FinalProject\\customers.csv";//CSV file location
  
