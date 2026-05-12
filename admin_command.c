@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "admin_command.h"
+#include "Integration.h"
 
 Action* createAction(char type[], int productID, char productName[], float price, int stock) {
     Action *newAction = (Action *)malloc(sizeof(Action));
