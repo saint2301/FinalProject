@@ -432,6 +432,14 @@ void on_btn_update_stock_clicked(GtkButton *button, gpointer data) {
         int id = atoi(gtk_entry_get_text(GTK_ENTRY(entry_id)));
         int newStock = atoi(gtk_entry_get_text(GTK_ENTRY(entry_stock)));
 
+        if (newStock < 0) {
+            GtkWidget *err = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Stock cannot be negative!");
+            gtk_dialog_run(GTK_DIALOG(err));
+            gtk_widget_destroy(err);
+            gtk_widget_destroy(dialog);
+            return;
+        }
+
         if (id <= 0) {
             GtkWidget *err = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Please enter a valid Product ID!");
             gtk_dialog_run(GTK_DIALOG(err));
