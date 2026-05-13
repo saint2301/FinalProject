@@ -1,0 +1,41 @@
+productID,name,price,stock
+1001,RTX 4090,1599.99,15
+1002,RTX 4070 Ti,799.99,30
+1003,RX 7900 XTX,999.99,20
+1004,Intel Core i9-14900K,589.99,25
+1005,AMD Ryzen 9 7950X,699.99,18
+1006,AMD Ryzen 5 7600X,299.99,40
+1007,Corsair Vengeance 32GB DDR5,129.99,50
+1008,Samsung 990 Pro 2TB SSD,189.99,45
+1009,WD Black SN850X 1TB,109.99,60
+1010,ASUS ROG Maximus Z790,599.99,12
+1011,MSI MAG B650 Tomahawk,249.99,22
+1012,Corsair RM1000x PSU,179.99,35
+1013,NZXT H510 Case,89.99,40
+1014,Corsair H150i Elite AIO,189.99,18
+1015,Logitech G Pro X Superlight,159.99,55
+1016,Razer BlackWidow V4,139.99,48
+1017,SteelSeries Arctis Nova Pro,349.99,25
+1018,LG 27GP950-B 4K Monitor,799.99,10
+1019,ASUS ROG Swift 360Hz,599.99,14
+1020,Elgato Stream Deck MK.2,149.99,30
+1021,Samsung Odyssey G9 49inch,1199.99,8
+1022,Keychron Q1 Pro,199.99,35
+1023,Logitech MX Master 3S,99.99,60
+1024,Kingston Fury Beast 64GB DDR5,249.99,20
+1025,Seagate IronWolf 8TB HDD,189.99,25
+1026,Thermaltake Tower 900 Case,299.99,12
+1027,be quiet! Dark Rock Pro 4,89.99,30
+1028,ASUS ROG Strix B650-F,329.99,18
+1029,Razer DeathAdder V3 Pro,149.99,40
+1030,HyperX Cloud Alpha Wireless,199.99,28
+1031,Corsair K100 RGB Keyboard,229.99,22
+1032,ASUS ProArt PA279CRV Monitor,749.99,9
+1033,Rode NT-USB Mini Microphone,99.99,35
+1034,Elgato 4K60 Pro Capture Card,199.99,15
+1035,Nvidia RTX 4060 Ti,399.99,28
+1036,AMD Radeon RX 7600,269.99,33
+1037,Crucial T700 2TB SSD,219.99,20
+1038,Noctua NH-D15 Cooler,99.99,42
+1039,Lian Li O11 Dynamic EVO,169.99,17
+1040,Logitech G923 Racing Wheel,399.99,20
