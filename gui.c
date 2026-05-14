@@ -23,7 +23,6 @@ void on_btn_delete_product_clicked(GtkButton *button, gpointer data);
 void on_btn_update_stock_clicked(GtkButton *button, gpointer data);
 void on_btn_search_product_clicked(GtkButton *button, gpointer data);
 void on_btn_add_customer_clicked(GtkButton *button, gpointer data);
-void on_btn_delete_customer_clicked(GtkButton *button, gpointer data);
 void on_btn_search_customer_clicked(GtkButton *button, gpointer data);
 void on_btn_place_order_clicked(GtkButton *button, gpointer data);
 void on_btn_process_order_clicked(GtkButton *button, gpointer data);
@@ -220,7 +219,6 @@ int main(int argc, char *argv[]) {
     GtkWidget *btn_update          = GTK_WIDGET(gtk_builder_get_object(builder, "btn_update_stock"));
     GtkWidget *btn_search          = GTK_WIDGET(gtk_builder_get_object(builder, "btn_search_product"));
     GtkWidget *btn_add_customer    = GTK_WIDGET(gtk_builder_get_object(builder, "btn_add_customer"));
-    GtkWidget *btn_delete_customer = GTK_WIDGET(gtk_builder_get_object(builder, "btn_delete_customer"));
     GtkWidget *btn_search_customer = GTK_WIDGET(gtk_builder_get_object(builder, "btn_search_customer"));
     GtkWidget *btn_place_order     = GTK_WIDGET(gtk_builder_get_object(builder, "btn_place_order"));
     GtkWidget *btn_process_order   = GTK_WIDGET(gtk_builder_get_object(builder, "btn_process_order"));
@@ -234,7 +232,6 @@ int main(int argc, char *argv[]) {
     g_signal_connect(btn_update,          "clicked", G_CALLBACK(on_btn_update_stock_clicked),    NULL);
     g_signal_connect(btn_search,          "clicked", G_CALLBACK(on_btn_search_product_clicked),  NULL);
     g_signal_connect(btn_add_customer,    "clicked", G_CALLBACK(on_btn_add_customer_clicked),    NULL);
-    g_signal_connect(btn_delete_customer, "clicked", G_CALLBACK(on_btn_delete_customer_clicked), NULL);
     g_signal_connect(btn_search_customer, "clicked", G_CALLBACK(on_btn_search_customer_clicked), NULL);
     g_signal_connect(btn_place_order,     "clicked", G_CALLBACK(on_btn_place_order_clicked),     NULL);
     g_signal_connect(btn_process_order,   "clicked", G_CALLBACK(on_btn_process_order_clicked),   NULL);
@@ -529,48 +526,6 @@ void on_btn_add_customer_clicked(GtkButton *button, gpointer data) {
             Customer *c = createCustomer(id, (char *)name, (char *)phone);
             insertCustomer(app.customerTable, c);
             populate_customers();
-        }
-    }
-    gtk_widget_destroy(dialog);
-}
-
-void on_btn_delete_customer_clicked(GtkButton *button, gpointer data) {
-    GtkWidget *dialog = gtk_dialog_new_with_buttons("Delete Customer", NULL, GTK_DIALOG_MODAL, "Delete", GTK_RESPONSE_OK, "Cancel", GTK_RESPONSE_CANCEL, NULL);
-    GtkWidget *content = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
-    GtkWidget *lbl = gtk_label_new("Enter Customer ID to delete:");
-    GtkWidget *entry = gtk_entry_new();
-    gtk_container_add(GTK_CONTAINER(content), lbl);
-    gtk_container_add(GTK_CONTAINER(content), entry);
-    gtk_widget_show_all(dialog);
-    if (gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_OK) {
-        int id = atoi(gtk_entry_get_text(GTK_ENTRY(entry)));
-
-        if (id <= 0) {
-            GtkWidget *err = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Please enter a valid Customer ID!");
-            gtk_dialog_run(GTK_DIALOG(err));
-            gtk_widget_destroy(err);
-        } else {
-            Customer *found = searchCustomer(app.customerTable, id);
-            if (found != NULL) {
-                int index = hashFunction(id);
-                Customer *current = app.customerTable[index];
-                Customer *prev = NULL;
-                while (current != NULL && current->CustomerID != id) {
-                    prev = current;
-                    current = current->next;
-                }
-                if (prev == NULL) {
-                    app.customerTable[index] = current->next;
-                } else {
-                    prev->next = current->next;
-                }
-                free(current);
-                populate_customers();
-            } else {
-                GtkWidget *err = gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "Customer ID %d not found!", id);
-                gtk_dialog_run(GTK_DIALOG(err));
-                gtk_widget_destroy(err);
-            }
         }
     }
     gtk_widget_destroy(dialog);
