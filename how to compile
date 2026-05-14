@@ -1,1 +1,0 @@
-gcc main.c Integration.c admin_command.c Customer_no_main.c Inventory.c orders.c -o output/Customer_Test1.exe
